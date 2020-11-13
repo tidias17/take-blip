@@ -1,0 +1,145 @@
+@import 'variables'
+@import 'fonts'
+a, a:hover, ul, li, p, h1, h2, h3, h4, h5
+  margin: 0
+  padding: 0
+  font-size: 18px
+  font-weight: 400
+  text-transform: none
+  font-style: normal
+  text-decoration: none
+  line-height: 1.5
+*
+  box-sizing: border-box
+  font-family: 'Source Sans Pro', sans-serif
+  text-transform: lowercase
+html
+  scroll-behavior: smooth
+body
+  font-size: 16px
+  background-color: $grey-50
+  &.modalOpened
+    overflow: hidden
+ul
+  list-style: none
+a, a:hover
+  text-decoration: none
+h1
+  width: 100%
+  font-weight: 700
+  text-transform: uppercase
+  margin: 12px 0 8px
+  font-size: 38px
+h2 
+  width: 100%
+  font-weight: 700
+  font-size: 32px	
+  text-transform: initial
+  position: relative
+  color: $grey-600
+h3
+  width: 100%
+  font-weight: 600
+  color: $grey-700
+  margin: 4px 0 8px
+  font-size: 32px
+h4
+  font-size: 26px
+  font-weight: 300
+  color: $white
+h5
+  width: 100%
+  font-weight: 600
+  text-transform: uppercase
+  font-style: italic
+  text-decoration: underline
+  margin: 12px 0 8px
+  font-size: 13px
+.full
+  width: 100%
+.button
+  padding: 8px 80px !important
+  background-color: rgba(255,255,255,.4)
+  border-radius: 4px
+  margin: 32px auto 12px !important
+  font-weight: 600 !important
+  @media (max-width: $widthTerciarySmall)
+        padding: 8px 40px !important
+        margin: 20px auto 12px !important
+.content-general
+  background-color: $grey-50
+.wrapper-cards
+  .space-star
+    width: 28px
+    height: 28px
+    position: absolute
+    top: 12px
+    left: 12px
+    display: flex
+    justify-content: center
+    align-items: center
+  .space-image
+    width: 52px
+    height: 52px
+    border-radius: 50%
+    background-color: $blue-300
+    overflow: hidden
+    display: flex
+    justify-content: center
+    align-items: center
+    background-size: cover
+  .space-name
+    width: 100%
+    text-align: center
+    font-weight: 700
+    font-size: 16px
+    span
+      font-size: 14px
+      font-weight: 400
+  .space-date
+    display: none
+
+.card.preview-list
+  width: calc(100% - 80px)
+  height: 68px
+  margin-left: 50px
+  .content-card
+    padding: 8px 20px
+    justify-content: flex-start
+    .space-star
+      left: -39px
+    .space-image
+      width: 32px
+      height: 32px
+    .space-name
+      width: calc(100% - 32px - 200px - 24px)
+      text-align: left
+      margin-left: 12px
+      font-weight: 400
+      span
+        display: none
+    .space-date
+      width: 200px
+      color: $grey-400
+      display: block
+      font-size: 14px
+      text-align: right
+.global-box
+  width: 100%
+  .content-box
+    width: 1200px
+    margin: 0 auto
+    padding: 40px 0 0
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    align-items: center
+  @media (max-width: $widthTerciary)
+    padding: 0
+    &.diff
+      &::before
+        transform: skew(0,-6deg)
+  @media (max-width: $widthPrimarySmall)
+    .content-box
+      width: 84%
+      

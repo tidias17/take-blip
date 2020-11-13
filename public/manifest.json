@@ -1,0 +1,9 @@
+{
+  "short_name": "Take Blip - Contatos Inteligentes",
+  "name": "Take Blip - Contatos Inteligentes",
+  "start_url": "./",
+  "background_color": "#CCCCCC",
+  "display": "standalone",
+  "scope": "./",
+  "theme_color": "#CCCCCC"
+}

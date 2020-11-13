@@ -1,0 +1,17 @@
+@import 'variables.sass';
+@import "~vue-material/dist/theme/engine";
+
+@include md-register-theme("default", (
+  primary: $grey-200,
+));
+
+@import "~vue-material/dist/theme/all";
+
+/deep/ .md-switch {
+  .md-switch-container {
+    background-color: #ffd697;
+    .md-switch-thumb {
+      background-color: $grey-200
+    }
+  }
+}
