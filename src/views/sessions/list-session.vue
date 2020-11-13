@@ -1,8 +1,8 @@
 <template>
   <section class="content-box">
-    <favorites-items-session :preview="preview" />
+    <favorites-items-session :previewList="previewList" />
     <division-line />
-    <others-items-session :preview="preview" />
+    <others-items-session :previewList="previewList" />
   </section>
 </template>
 
@@ -10,8 +10,8 @@
 export default {
   name: 'list-session',
   props: {
-    preview: {
-      type: String,
+    previewList: {
+      type: Boolean,
       required: true,
     },
   },

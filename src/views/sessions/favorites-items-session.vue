@@ -4,7 +4,7 @@
       Favorities
     </h3>
     <section class="wrapper-cards">
-      <card width15 :preview="preview" >
+      <card width15 :previewList="previewList" >
         <section slot="content" class="content-card">
           <div class="space-star">
             <img src="../../assets/images/icons/star.png" >
@@ -30,8 +30,8 @@
 export default {
   name: 'favorites-items-session',
   props: {
-    preview: {
-      type: String,
+    previewList: {
+      type: Boolean,
       required: true,
     },
   },

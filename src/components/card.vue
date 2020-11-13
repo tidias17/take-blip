@@ -17,7 +17,7 @@
       'width80': width80,
       'width90': width90,
       'space-left': spaceLeft,
-      'preview-list': preview !== 'block',
+      'preview-list': previewList,
     }"
   >
     <slot name="content" />
@@ -28,9 +28,9 @@
 export default {
   name: 'card',
   props: {
-    preview: {
-      type: String,
-      required: true,
+    previewList: {
+      type: Boolean,
+      default: false,
     },
     width10: {
       type: Boolean,

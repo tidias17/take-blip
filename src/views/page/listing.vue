@@ -1,7 +1,7 @@
 <template>
   <section class="content-general">
     <header-listing-session />
-    <list-session :preview="preview"/>
+    <list-session :previewList="previewList" />
     <fab />
   </section>
 </template>
@@ -14,7 +14,7 @@ export default {
   data() {
     return {
       list: listExternal,
-      preview: 'list',
+      previewList: false,
     };
   },
 };
