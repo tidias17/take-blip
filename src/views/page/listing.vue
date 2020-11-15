@@ -17,6 +17,22 @@ export default {
       previewList: false,
     };
   },
+  mounted() {
+    this.$bus.$on('changeDisplayList', () => {
+      this.changeDisplayList();
+    });
+    this.$bus.$on('changeDisplayBlock', () => {
+      this.changeDisplayBlock();
+    });
+  },
+  methods: {
+    changeDisplayList() {
+      this.previewList = true;
+    },
+    changeDisplayBlock() {
+      this.previewList = false;
+    },
+  },
 };
 </script>
 
