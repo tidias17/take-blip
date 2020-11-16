@@ -4,7 +4,13 @@
       My chatbots
     </h2>
     <div class="wrapper-content-header-listing">
-      <input type="text" v-model="searchInput" @input="filterString">
+      <input
+        type="text"
+        id="search-input"
+        placeholder="Search"
+        v-model="searchInput"
+        @input="filterString"
+      />
       <btn description="Order by name" small @click.native="orderName" />
       <btn description="Order by creation" medium @click.native="orderCreation" />
       <btn-icon icon="organize-blocks" small @click.native="changeDisplayBlock" />
@@ -51,6 +57,12 @@ export default {
     align-items: center
     .wrapper-content-header-listing
       display: flex
+      input
+        width: 300px
+        height: 34px
+        border-radius: 6px
+        border: 1px solid $grey-400
+        padding: 0 12px
       button
         margin-left: 12px
 </style>

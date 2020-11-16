@@ -32,7 +32,7 @@
   </section>
   <section class="empty-state" v-else>
       <p>
-        Lista vazia!
+        Empty List!
       </p>
     </section>
 </template>

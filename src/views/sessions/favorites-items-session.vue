@@ -36,7 +36,7 @@
     </section>
     <section class="empty-state" v-else>
       <p>
-        Lista de favoritos vazia!
+        Empty List!
       </p>
     </section>
   </section>
