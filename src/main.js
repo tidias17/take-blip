@@ -16,8 +16,7 @@ import store from './store/main';
 import i18n from './i18n/main';
 import services from './services/main';
 import Class from './utils/class/main';
-// import './utils/filters/main';
-// import './utils/directives/main';
+import './utils/filters/main';
 
 Vue.use(VueRouter);
 Vue.use(Vuelidate);
