@@ -10,7 +10,6 @@ export default class common {
    * @param {Boolean} date Boolean to considere string of date in key.
    */
   static async orderAbc(itens, key, date) {
-    console.log(123);
     const order = itens.sort((a, b) => {
       if (date) {
         let aa = a[key].split(' ');
