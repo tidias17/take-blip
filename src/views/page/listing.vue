@@ -15,6 +15,8 @@ export default {
     return {
       listOthers: listExternal,
       listFavorities: [],
+      originalListOthers: listExternal,
+      originalListFavorities: [],
       previewList: false,
     };
   },
@@ -30,6 +32,9 @@ export default {
     });
     this.$bus.$on('orderCreation', () => {
       this.orderCreation();
+    });
+    this.$bus.$on('filterString', (value) => {
+      this.filterString(value);
     });
     this.$bus.$on('favoritieBoot', (value) => {
       this.favoritieBoot(value);
@@ -61,13 +66,27 @@ export default {
         this.listFavorities = data;
       });
     },
+    filterString(value) {
+      this.$Class.common.filterString(this.originalListOthers, value.toLowerCase())
+        .then((data) => {
+          this.listOthers = data;
+        });
+      this.$Class.common.filterString(this.originalListFavorities, value.toLowerCase())
+        .then((data) => {
+          this.listFavorities = data;
+        });
+    },
     favoritieBoot(value) {
       this.listFavorities.push(value);
+      this.originalListFavorities.push(value);
       this.listOthers = this.listOthers.filter((item) => item !== value);
+      this.originalListOthers = this.originalListOthers.filter((item) => item !== value);
     },
     unfavoritieBoot(value) {
       this.listOthers.push(value);
+      this.originalListOthers.push(value);
       this.listFavorities = this.listFavorities.filter((item) => item !== value);
+      this.originalListFavorities = this.originalListFavorities.filter((item) => item !== value);
     },
   },
 };

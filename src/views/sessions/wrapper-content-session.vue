@@ -30,7 +30,7 @@
       <card width50>
         <div slot="content" class="content-card">
           <p>
-            {{data.analytics.message.received}}
+            {{data.analytics.message.received | formatNumber}}
           </p>
           <p>
             Mensagens recebidas
@@ -40,7 +40,7 @@
       <card width50 spaceLeft>
         <div slot="content" class="content-card">
           <p>
-            {{data.analytics.message.sent}}
+            {{data.analytics.message.sent | formatNumber}}
           </p>
           <p>
             Mensagens enviadas

@@ -28,4 +28,11 @@ export default class common {
     });
     return order;
   }
+
+  static async filterString(array, value) {
+    if (value !== '') {
+      return array.filter((item) => (item.name.toLowerCase()).includes(value));
+    }
+    return array;
+  }
 }

@@ -4,7 +4,7 @@
       My chatbots
     </h2>
     <div class="wrapper-content-header-listing">
-      <input type="text">
+      <input type="text" v-model="searchInput" @input="filterString">
       <btn description="Order by name" small @click.native="orderName" />
       <btn description="Order by creation" medium @click.native="orderCreation" />
       <btn-icon icon="organize-blocks" small @click.native="changeDisplayBlock" />
@@ -16,6 +16,11 @@
 <script>
 export default {
   name: 'header-listing-session',
+  data() {
+    return {
+      searchInput: '',
+    };
+  },
   methods: {
     changeDisplayBlock() {
       this.$bus.$emit('changeDisplayBlock');
@@ -28,6 +33,9 @@ export default {
     },
     orderCreation() {
       this.$bus.$emit('orderCreation');
+    },
+    filterString() {
+      this.$bus.$emit('filterString', this.searchInput);
     },
   },
 };
