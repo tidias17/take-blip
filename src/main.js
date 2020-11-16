@@ -2,14 +2,8 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import { Vuelidate } from 'vuelidate';
 import VueTheMask from 'vue-the-mask';
-import {
-  MdDatepicker, MdField, MdList, MdMenu, MdDialog,
-  MdCheckbox, MdButton, MdRadio, MdSwitch,
-} from 'vue-material/dist/components';
 import * as moment from 'moment';
 import App from './App.vue';
-
-import 'vue-material/dist/vue-material.min.css';
 
 import router from './routers/main';
 import store from './store/main';
@@ -20,15 +14,6 @@ import './utils/filters/main';
 
 Vue.use(VueRouter);
 Vue.use(Vuelidate);
-Vue.use(MdDatepicker);
-Vue.use(MdField);
-Vue.use(MdList);
-Vue.use(MdMenu);
-Vue.use(MdDialog);
-Vue.use(MdCheckbox);
-Vue.use(MdButton);
-Vue.use(MdRadio);
-Vue.use(MdSwitch);
 Vue.use(VueTheMask);
 
 // Load all Components

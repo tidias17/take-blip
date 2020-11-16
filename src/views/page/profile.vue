@@ -1,21 +1,29 @@
 <template>
   <section class="global-box">
-    <header-profile-session />
+    <header-profile-session :data="data" />
     <division-line />
-    <wrapper-content-session />
+    <wrapper-content-session :data="data" />
   </section>
 </template>
 
 <script>
 export default {
   name: 'profile-view',
+  props: {
+    data: {
+      type: Object,
+      default: () => {},
+    },
+  },
   data() {
     return {
 
     };
   },
   mounted() {
-
+    if (this.data === undefined) {
+      this.$router.push({ path: 'listing' });
+    }
   },
 };
 </script>

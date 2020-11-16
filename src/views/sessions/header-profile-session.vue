@@ -1,12 +1,31 @@
 <template>
   <section>
-    header profile
+    <div>
+      <p>
+        {{data.name}}
+        <br>
+        <span>
+          {{data.shortName}}
+        </span>
+      </p>
+    </div>
+    <div>
+      <p>
+        Created at {{data.created | formatDate}}
+      </p>
+    </div>
   </section>
 </template>
 
 <script>
 export default {
   name: 'header-profile-session',
+  props: {
+    data: {
+      type: Object,
+      default: () => {},
+    },
+  },
 };
 </script>
 

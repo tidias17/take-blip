@@ -3,22 +3,48 @@
     <section class="wrapper-cards">
       <card width35>
         <div slot="content" class="content-card">
-          Region
+          <p>
+            Region and idiom
+          </p>
+          <p>
+            {{data.culture}}
+          </p>
+          <p>
+            Timezone
+          </p>
+          <p>
+            {{data.culture}}
+          </p>
         </div>
       </card>
       <card width65 spaceLeft>
         <div slot="content" class="content-card">
-          Usuários
+          <p>
+            {{data.analytics.user.actived}}
+          </p>
+          <p>
+            Usuários ativos
+          </p>
         </div>
       </card>
       <card width50>
         <div slot="content" class="content-card">
-          Mensagens Recebidas
+          <p>
+            {{data.analytics.message.received}}
+          </p>
+          <p>
+            Mensagens recebidas
+          </p>
         </div>
       </card>
       <card width50 spaceLeft>
         <div slot="content" class="content-card">
-          Mensagens Enviadas
+          <p>
+            {{data.analytics.message.sent}}
+          </p>
+          <p>
+            Mensagens enviadas
+          </p>
         </div>
       </card>
     </section>
@@ -26,7 +52,7 @@
       <img src="../../assets/images/icons/plano.png" >
       <p>
         Status account<br>
-        {DADO}
+        {{data.plan}}
       </p>
       <btn description="Update account" small />
     </section>
@@ -36,6 +62,12 @@
 <script>
 export default {
   name: 'wrapper-content-session',
+  props: {
+    data: {
+      type: Object,
+      default: () => {},
+    },
+  },
 };
 </script>
 

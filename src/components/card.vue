@@ -110,6 +110,9 @@ export default {
     border-radius: 6px
     box-shadow: 1px 1px 4px 0px $grey-400
     margin-bottom: 28px
+    a.content-card
+      width: 100%
+      padding: 0
     .content-card
       display: flex
       flex-wrap: wrap

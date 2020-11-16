@@ -16,6 +16,7 @@ const router = new VueRouter({
     },
     {
       path: '/listing',
+      name: 'linting',
       component: lazy('listing-view'),
       props: true,
       meta: {
@@ -24,6 +25,7 @@ const router = new VueRouter({
     },
     {
       path: '/profile/',
+      name: 'profile',
       component: lazy('profile-view'),
       props: true,
       meta: {

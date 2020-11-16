@@ -23,7 +23,7 @@ export default {
     height: 52px
     background-color: $blue-300
     border-radius: 50%
-    position: absolute
+    position: fixed
     bottom: 24px
     right: 24px
     box-shadow: 1px 1px 4px 0px $grey-400

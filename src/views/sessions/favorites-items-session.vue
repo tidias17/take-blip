@@ -15,17 +15,22 @@
           <div class="space-star" @click="(unfavoritieBoot(item))">
             <img src="../../assets/images/icons/star.png" >
           </div>
-          <div class="space-image" :style="`background-image: url(${item.image})`" />
-          <p class="space-name">
-              {{item.name}}
-            <br>
-            <span>
-              {{item.shortName}}
-            </span>
-          </p>
-          <p class="space-date">
-            Created at {{item.created | formatDate}}
-          </p>
+          <router-link
+            :to="{name: 'profile', params: {data: item}}"
+            class="content-card"
+          >
+            <div class="space-image" :style="`background-image: url(${item.image})`" />
+            <p class="space-name">
+                {{item.name}}
+              <br>
+              <span>
+                {{item.shortName}}
+              </span>
+            </p>
+            <p class="space-date">
+              Created at {{item.created | formatDate}}
+            </p>
+          </router-link>
         </section>
       </card>
     </section>
