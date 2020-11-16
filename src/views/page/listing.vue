@@ -1,7 +1,7 @@
 <template>
   <section class="content-general">
     <header-listing-session />
-    <list-session :previewList="previewList" />
+    <list-session :previewList="previewList" :list="list" />
     <fab />
   </section>
 </template>
@@ -24,6 +24,12 @@ export default {
     this.$bus.$on('changeDisplayBlock', () => {
       this.changeDisplayBlock();
     });
+    this.$bus.$on('orderName', () => {
+      this.orderName();
+    });
+    this.$bus.$on('orderCreation', () => {
+      this.orderCreation();
+    });
   },
   methods: {
     changeDisplayList() {
@@ -31,6 +37,16 @@ export default {
     },
     changeDisplayBlock() {
       this.previewList = false;
+    },
+    orderName() {
+      this.$Class.common.orderAbc(this.list, 'name').then((data) => {
+        this.list = data;
+      });
+    },
+    orderCreation() {
+      this.$Class.common.orderAbc(this.list, 'created').then((data) => {
+        this.list = data;
+      });
     },
   },
 };

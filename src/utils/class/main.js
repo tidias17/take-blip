@@ -1,5 +1,6 @@
+import common from './common';
 import requestClass from './request';
 
 export default {
-  requestClass,
+  common, requestClass,
 };

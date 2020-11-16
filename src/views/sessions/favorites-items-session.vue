@@ -50,4 +50,10 @@ export default {
     margin-bottom: 32px
     h3
       margin-bottom: 12px
+    .wrapper-cards
+      width: 100%
+      margin-top: 32px
+      display: flex
+      flex-wrap: wrap
+      justify-content: space-between
 </style>

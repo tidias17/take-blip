@@ -1,20 +1,25 @@
 <template>
   <section class="wrapper-cards">
-    <card width15 :previewList="previewList">
+    <card
+      v-for="(item, index) in list"
+      :key="index"
+      width15
+      :previewList="previewList"
+    >
       <section slot="content" class="content-card">
         <div class="space-star">
           <img src="../../assets/images/icons/favorite.png" >
         </div>
-        <div class="space-image" :style="`background-image: url(${image})`" />
+        <div class="space-image" :style="`background-image: url(${item.image})`" />
         <p class="space-name">
-            {Bot Name}
+            {{item.name}}
           <br>
           <span>
-            {Builder}
+            {{item.shortName}}
           </span>
         </p>
         <p class="space-date">
-            Created at {11/11/1111}
+          {{item.created}}
         </p>
       </section>
     </card>
@@ -29,6 +34,10 @@ export default {
       type: Boolean,
       required: true,
     },
+    list: {
+      type: Array,
+      default: () => [],
+    },
   },
   data() {
     return {
@@ -40,7 +49,10 @@ export default {
 
 <style lang="sass" scoped>
   @import "../../assets/sass/main.sass"
-  section
+  .wrapper-cards
     width: 100%
     margin-top: 32px
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
 </style>

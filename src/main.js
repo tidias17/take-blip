@@ -15,7 +15,7 @@ import router from './routers/main';
 import store from './store/main';
 import i18n from './i18n/main';
 import services from './services/main';
-// import Class from './utils/class/main';
+import Class from './utils/class/main';
 // import './utils/filters/main';
 // import './utils/directives/main';
 
@@ -44,7 +44,7 @@ const EventBus = new Vue();
 
 Vue.prototype.$moment = moment;
 Vue.prototype.$Services = services;
-// Vue.prototype.$Class = Class;
+Vue.prototype.$Class = Class;
 Vue.prototype.$bus = EventBus;
 
 let app = '';

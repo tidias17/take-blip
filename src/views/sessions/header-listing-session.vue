@@ -5,8 +5,8 @@
     </h2>
     <div class="wrapper-content-header-listing">
       <input type="text">
-      <btn description="Order by name" small />
-      <btn description="Order by creation" medium />
+      <btn description="Order by name" small @click.native="orderName" />
+      <btn description="Order by creation" medium @click.native="orderCreation" />
       <btn-icon icon="organize-blocks" small @click.native="changeDisplayBlock" />
       <btn-icon icon="organize-list" small  @click.native="changeDisplayList"  />
     </div>
@@ -16,13 +16,18 @@
 <script>
 export default {
   name: 'header-listing-session',
-
   methods: {
     changeDisplayBlock() {
       this.$bus.$emit('changeDisplayBlock');
     },
     changeDisplayList() {
       this.$bus.$emit('changeDisplayList');
+    },
+    orderName() {
+      this.$bus.$emit('orderName');
+    },
+    orderCreation() {
+      this.$bus.$emit('orderCreation');
     },
   },
 };

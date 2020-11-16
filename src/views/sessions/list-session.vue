@@ -2,7 +2,7 @@
   <section class="content-box">
     <favorites-items-session :previewList="previewList" />
     <division-line />
-    <others-items-session :previewList="previewList" />
+    <others-items-session :previewList="previewList" :list="list" />
   </section>
 </template>
 
@@ -13,6 +13,10 @@ export default {
     previewList: {
       type: Boolean,
       required: true,
+    },
+    list: {
+      type: Array,
+      default: () => [],
     },
   },
 };
