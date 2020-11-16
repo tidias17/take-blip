@@ -4,6 +4,7 @@
     :class="{
       'width10': width10,
       'width15': width15,
+      'width1667': width1667,
       'width20': width20,
       'width30': width30,
       'width35': width35,
@@ -37,6 +38,10 @@ export default {
       default: false,
     },
     width15: {
+      type: Boolean,
+      default: false,
+    },
+    width1667: {
       type: Boolean,
       default: false,
     },
@@ -121,6 +126,10 @@ export default {
       width: 15%
       &.space-left
         width: calc(15% - 28px)
+    &.width1667
+      width: 16.66667%
+      &.space-left
+        width: calc(16.66667% - 23.33333px)
     &.width20
       width: 20%
       &.space-left
@@ -170,5 +179,6 @@ export default {
       &.space-left
         width: calc(90% - 28px)
     &.space-left
-      margin-left: 28px
+      &:not(:nth-child(6n+1))
+        margin-left: 28px
 </style>

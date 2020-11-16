@@ -1,7 +1,7 @@
 <template>
   <section class="content-general">
     <header-listing-session />
-    <list-session :previewList="previewList" :list="list" />
+    <list-session :previewList="previewList" :list="listOthers" :listFavorities="listFavorities" />
     <fab />
   </section>
 </template>
@@ -13,7 +13,8 @@ export default {
   name: 'listing-view',
   data() {
     return {
-      list: listExternal,
+      listOthers: listExternal,
+      listFavorities: [],
       previewList: false,
     };
   },
@@ -30,6 +31,12 @@ export default {
     this.$bus.$on('orderCreation', () => {
       this.orderCreation();
     });
+    this.$bus.$on('favoritieBoot', (value) => {
+      this.favoritieBoot(value);
+    });
+    this.$bus.$on('unfavoritieBoot', (value) => {
+      this.unfavoritieBoot(value);
+    });
   },
   methods: {
     changeDisplayList() {
@@ -39,14 +46,28 @@ export default {
       this.previewList = false;
     },
     orderName() {
-      this.$Class.common.orderAbc(this.list, 'name').then((data) => {
-        this.list = data;
+      this.$Class.common.orderAbc(this.listOthers, 'name').then((data) => {
+        this.listOthers = data;
+      });
+      this.$Class.common.orderAbc(this.listFavorities, 'name').then((data) => {
+        this.listFavorities = data;
       });
     },
     orderCreation() {
-      this.$Class.common.orderAbc(this.list, 'created').then((data) => {
-        this.list = data;
+      this.$Class.common.orderAbc(this.listOthers, 'created').then((data) => {
+        this.listOthers = data;
       });
+      this.$Class.common.orderAbc(this.listFavorities, 'created').then((data) => {
+        this.listFavorities = data;
+      });
+    },
+    favoritieBoot(value) {
+      this.listFavorities.push(value);
+      this.listOthers = this.listOthers.filter((item) => item !== value);
+    },
+    unfavoritieBoot(value) {
+      this.listOthers.push(value);
+      this.listFavorities = this.listFavorities.filter((item) => item !== value);
     },
   },
 };

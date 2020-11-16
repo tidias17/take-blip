@@ -1,6 +1,6 @@
 <template>
   <section class="content-box">
-    <favorites-items-session :previewList="previewList" />
+    <favorites-items-session :previewList="previewList" :listFavorities="listFavorities" />
     <division-line />
     <others-items-session :previewList="previewList" :list="list" />
   </section>
@@ -15,6 +15,10 @@ export default {
       required: true,
     },
     list: {
+      type: Array,
+      default: () => [],
+    },
+    listFavorities: {
       type: Array,
       default: () => [],
     },
