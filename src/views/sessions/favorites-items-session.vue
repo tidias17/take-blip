@@ -18,7 +18,7 @@
             </span>
           </p>
           <p class="space-date">
-              Created at {11/11/1111}
+            Created at {{item.created | formatDate}}
           </p>
         </section>
       </card>
