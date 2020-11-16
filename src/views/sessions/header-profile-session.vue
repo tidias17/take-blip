@@ -1,6 +1,7 @@
 <template>
   <section>
-    <div>
+    <div class="wrapper-name">
+      <avatar icon="blip" />
       <p>
         {{data.name}}
         <br>
@@ -9,11 +10,9 @@
         </span>
       </p>
     </div>
-    <div>
-      <p>
-        Created at {{data.created | formatDate}}
-      </p>
-    </div>
+    <p class="info-created">
+      Created at {{data.created | formatDate}}
+    </p>
   </section>
 </template>
 
@@ -37,4 +36,20 @@ export default {
     display: flex
     justify-content: space-between
     align-items: center
+    .wrapper-name
+      width: calc(100% - 150px)
+      display: flex
+      p
+        font-size: 24px
+        font-weight: 700
+        line-height: 1
+        color: $grey-600
+        span
+          font-size: 14px
+          font-weight: 400
+          color: $grey-400
+    .info-created
+      width: 150px
+      font-size: 14px
+      color: $grey-400
 </style>
